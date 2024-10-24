@@ -5,12 +5,31 @@ description = ""
 authors = ["Mairondc21 <duartemairon@gmail.com>"]
 readme = "README.md"
 
-[tool.poetry.dependencies]
-python = "^3.12"
-fastapi = {extras = ["standard"], version = "^0.115.0"}
-uvicorn = {extras = ["standard"], version = "^0.31.0"}
-sqlalchemy = "^2.0.35"
-
+dependencies = [
+    "aiofiles",
+    "aiosqlite",
+    "alembic",
+    "anyio",
+    "httpx",
+    "httpx-sse",
+    "loguru",
+    "pydantic",
+    "sqlalchemy[asyncio,mypy]",
+    "stamina",
+    "third-party-imports",
+    "typer[all]",
+]
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ipython",
+    "mypy",
+    "pip-tools",
+    "pre-commit",
+    "pyproject-fmt",
+    "ruff",
+    "types-aiofiles",
+]
 
 [build-system]
 requires = ["poetry-core"]
